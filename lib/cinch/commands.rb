@@ -1,0 +1,1 @@
+require 'cinch/commands/version'

@@ -1,0 +1,12 @@
+name: cinch-commands
+summary: "TODO: Summary"
+description: "TODO: Description"
+license: MIT
+authors: hal
+homepage: http://rubygems.org/gems/cinch-commands
+
+
+development_dependencies:
+  ore-tasks: ~> 0.4
+  rspec: ~> 2.4
+  yard: ~> 0.7
