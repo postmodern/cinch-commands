@@ -30,6 +30,9 @@ module Cinch
       #
       # @option options [String] :description
       #
+      # @option options [Array] :aliases
+      #   Additiona aliases for the command.
+      #
       def initialize(name,arguments,options={})
         @name        = name.to_s
         @arguments   = arguments
