@@ -65,7 +65,7 @@ module Cinch
       def regexp
         pattern = '(?:' + Regexp.union([@name] + @aliases).source + ')'
 
-        @arguments.each do |name,format|
+        @arguments.each_value do |format|
           arg_regexp = case format
                        when Symbol
                          ARG_FORMATS.fetch(format)
