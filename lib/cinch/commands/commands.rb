@@ -3,6 +3,10 @@ require 'cinch/commands/command'
 module Cinch
   module Commands
 
+    def self.included(base)
+      base.extend ClassMethods
+    end
+
     module ClassMethods
       #
       # All registered commands.
