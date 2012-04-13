@@ -19,6 +19,12 @@ module Cinch
                 COMMAND.
               }
 
+      command :help, {},
+              summary: "Lists available commands",
+              description: %{
+                If no COMMAND argument is given, then all commands will be listed.
+              }
+
       #
       # Displays a list of commands or the help information for a specific
       # command.
@@ -83,7 +89,7 @@ module Cinch
       # @return [Array<Command>]
       #   The commands with the matching name.
       #
-      def command_named(name)
+      def commands_named(name)
         each_command.select { |command| command.name == name }
       end
 
