@@ -91,7 +91,7 @@ module Cinch
         usage = "#{@name}"
 
         @arguments.each_key do |arg|
-          usage << ' ' << arg.upcase
+          usage << ' ' << arg.to_s.upcase
         end
 
         return usage
