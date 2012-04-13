@@ -5,6 +5,7 @@ module Cinch
     #
     class Command
 
+      # Argument formats
       ARG_FORMATS = {
         string:  /\S+/,
         integer: /\d+/,
@@ -12,7 +13,17 @@ module Cinch
         text:    /.+/
       }
 
-      attr_reader :name, :arguments, :summary, :description
+      # Name of the command
+      attr_reader :name
+      
+      # Argument names/formats
+      attr_reader :arguments
+      
+      # Short summary of the command
+      attr_reader :summary
+      
+      # Long description of the command
+      attr_reader :description
 
       #
       # Creates a new command.
@@ -26,12 +37,14 @@ module Cinch
       # @param [Hash] options
       #   Additional options.
       #
-      # @option options [String] :summary
-      #
-      # @option options [String] :description
-      #
       # @option options [Array] :aliases
       #   Additiona aliases for the command.
+      #
+      # @option options [String] :summary
+      #   Short summary of the command.
+      #
+      # @option options [String] :description
+      #   Long description of the command.
       #
       def initialize(name,arguments,options={})
         @name        = name.to_s

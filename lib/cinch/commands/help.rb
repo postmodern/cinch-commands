@@ -4,6 +4,9 @@ require 'cinch/plugin'
 
 module Cinch
   module Commands
+    #
+    # Generic `!help` command that lists all commands.
+    #
     class Help
 
       include Cinch::Plugin
@@ -16,6 +19,16 @@ module Cinch
                 COMMAND.
               }
 
+      #
+      # Displays a list of commands or the help information for a specific
+      # command.
+      #
+      # @param [Cinch::Message]
+      #   The message that invoked `!help`.
+      #
+      # @param [String] command
+      #   The specific command to list help information for.
+      #
       def help(m,command=nil)
         if command
           found = commands_named(command)
@@ -39,6 +52,18 @@ module Cinch
 
       protected
 
+      #
+      # Enumerates over every command.
+      #
+      # @yield [command]
+      #   The given block will be passed every command.
+      #
+      # @yieldparam [Command] command
+      #   A command.
+      #
+      # @return [Enumerator]
+      #   If no block is given, an Enumerator will be returned.
+      #
       def each_command(&block)
         return enum_for(__method__) unless block_given?
 
@@ -49,6 +74,15 @@ module Cinch
         end
       end
 
+      #
+      # Finds all commands with a similar name.
+      #
+      # @param [String] name
+      #   The name to search for.
+      #
+      # @return [Array<Command>]
+      #   The commands with the matching name.
+      #
       def command_named(name)
         each_command.select { |command| command.name == name }
       end

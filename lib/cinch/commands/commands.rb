@@ -38,8 +38,11 @@ module Cinch
       #   The new command.
       #
       # @example
-      #   command :promote, {name: :string, :rank: :integer},
-      #                     summary: 'Promotes the rank of a user'
+      #   command :grant, {name: :string, :level: :integer},
+      #                   summary: "Grants access",
+      #                   description: %{
+      #                     Grants a certain level of access to the user
+      #                   }
       #
       def command(name,arguments={},options={})
         new_command = Command.new(name,arguments,options)
