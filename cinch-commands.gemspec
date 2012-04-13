@@ -25,7 +25,7 @@ Gem::Specification.new do |gemspec|
   }
 
   version = {
-    :file     => 'commands/version',
+    :file     => 'cinch/commands/version',
     :constant => 'Cinch::Commands::VERSION'
   }
 
