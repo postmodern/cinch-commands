@@ -90,8 +90,15 @@ module Cinch
       def usage
         usage = "#{@name}"
 
-        @arguments.each_key do |arg|
-          usage << ' ' << arg.to_s.upcase
+        @arguments.each do |arg,format|
+          usage << ' ' << case format
+                          when Array
+                            '[' + format.join('|') + ']'
+                          when String
+                            format.to_s
+                          else
+                            arg.to_s.upcase
+                          end
         end
 
         return usage
