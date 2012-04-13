@@ -88,6 +88,9 @@ module Cinch
           pattern << ' (' << arg_regexp.source << ')'
         end
 
+        # match the full message
+        pattern << '$'
+
         return Regexp.new(pattern)
       end
 
