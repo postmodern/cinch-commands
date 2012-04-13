@@ -56,6 +56,16 @@ module Cinch
       end
 
       #
+      # The names for the command.
+      #
+      # @return [Array<String>]
+      #   Command names.
+      #
+      def names
+        [@name] + @aliases
+      end
+
+      #
       # Creates a Regular Expression that matches invocations of the command.
       #
       # @return [Regexp]

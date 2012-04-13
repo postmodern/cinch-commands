@@ -51,7 +51,13 @@ module Cinch
       def command(name,arguments={},options={})
         new_command = Command.new(name,arguments,options)
 
-        match(new_command.regexp, method: name)
+        unless arguments.empty?
+          match(new_command.regexp, method: name)
+        else
+          new_command.names.each do |command_name|
+            match(command_name, method: name)
+          end
+        end
 
         commands << new_command
         return new_command
