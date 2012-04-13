@@ -1,6 +1,6 @@
 name: cinch-commands
 summary: Define multiple commands within a Cinch Plugin
-description:
+description: |
   Allows defining multiple commands within a Cinch Plugin.
   Also provides a !help command with detailed output.
 
