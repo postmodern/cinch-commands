@@ -9,7 +9,7 @@ authors: Postmodern
 homepage: https://github.com/postmodern/cinch-commands
 
 dependencies:
-  cinch: ~> 1
+  cinch: ~> 2.0
 
 development_dependencies:
   rspec: ~> 2.4

@@ -44,7 +44,7 @@ Allows defining multiple commands within a Cinch Plugin.
 
 ## Requirements
 
-* [cinch][1] ~> 1
+* [cinch][1] ~> 2.0
 
 ## Install
 
