@@ -52,7 +52,7 @@ Allows defining multiple commands within a Cinch Plugin.
 
 ## Copyright
 
-Copyright (c) 2012 Hal Brodigan
+Copyright (c) 2012-2013 Hal Brodigan
 
 See {file:LICENSE.txt} for details.
 
