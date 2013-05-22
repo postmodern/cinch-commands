@@ -1,5 +1,6 @@
 require 'cinch/commands/commands'
 
+require 'cinch/helpers'
 require 'cinch/plugin'
 
 module Cinch
