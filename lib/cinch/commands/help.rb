@@ -1,8 +1,5 @@
 require 'cinch/commands/commands'
 
-require 'cinch/helpers'
-require 'cinch/plugin'
-
 module Cinch
   module Commands
     #
@@ -10,7 +7,6 @@ module Cinch
     #
     class Help
 
-      include Cinch::Plugin
       include Cinch::Commands
 
       command :help, {command: :string},

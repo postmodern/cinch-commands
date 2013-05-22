@@ -1,10 +1,14 @@
 require 'cinch/commands/command'
 
+require 'cinch/helpers'
+require 'cinch/plugin'
+
 module Cinch
   module Commands
 
     def self.included(base)
-      base.extend ClassMethods
+      base.send :include, Cinch::Plugin
+      base.send :extend, ClassMethods
     end
 
     module ClassMethods
