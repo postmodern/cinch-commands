@@ -26,13 +26,13 @@ Allows defining multiple commands within a Cinch Plugin.
       include Cinch::Commands
 
       command :foo, {arg1: :string, arg2: :integer},
-              summary:     "Does foo",
-              description: %{
-              }
+                    summary:     "Does foo",
+                    description: %{
+                      ...
+                    }
 
       command :bar, {name: :string},
               aliases: [:b]
-
 
       def foo(m,arg1,arg2)
       end
