@@ -77,12 +77,9 @@ module Cinch
 
         @arguments.each_value do |format|
           arg_regexp = case format
-                       when Symbol
-                         ARG_FORMATS.fetch(format)
-                       when Regexp
-                         format
-                       else
-                         Regexp.union(format)
+                       when Symbol then ARG_FORMATS.fetch(format)
+                       when Regexp then format
+                       else             Regexp.union(format)
                        end
 
           pattern << ' (' << arg_regexp.source << ')'
@@ -105,12 +102,9 @@ module Cinch
 
         @arguments.each do |arg,format|
           usage << ' ' << case format
-                          when Array
-                            '[' + format.join('|') + ']'
-                          when String
-                            format.to_s
-                          else
-                            arg.to_s.upcase
+                          when Array  then "[#{format.join('|')}]"
+                          when String then format.to_s
+                          else             arg.to_s.upcase
                           end
         end
 
