@@ -6,7 +6,7 @@ description: |
 
 license: MIT
 authors: Postmodern
-homepage: https://github.com/postmodern/cinch-commands
+homepage: https://github.com/postmodern/cinch-commands#readme
 
 dependencies:
   cinch: ~> 2.0
