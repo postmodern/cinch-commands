@@ -80,7 +80,7 @@ module Cinch
                        when Array  then Regexp.union(format)
                        when Regexp then format
                        when Symbol then ARG_FORMATS.fetch(format)
-                       when String then Regexp.escape(format)
+                       else             Regexp.escape(format.to_s)
                        end
 
           pattern << ' (' << arg_regexp.source << ')'
