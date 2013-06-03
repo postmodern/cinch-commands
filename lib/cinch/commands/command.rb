@@ -104,6 +104,7 @@ module Cinch
         @arguments.each do |arg,format|
           usage << ' ' << case format
                           when Array  then "[#{format.join('|')}]"
+                          when Regexp then format.source
                           when String then format.to_s
                           else             arg.to_s.upcase
                           end
