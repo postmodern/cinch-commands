@@ -77,9 +77,10 @@ module Cinch
 
         @arguments.each_value do |format|
           arg_regexp = case format
-                       when Symbol then ARG_FORMATS.fetch(format)
+                       when Array  then Regexp.union(format)
                        when Regexp then format
-                       else             Regexp.union(format)
+                       when Symbol then ARG_FORMATS.fetch(format)
+                       when String then Regexp.escape(format)
                        end
 
           pattern << ' (' << arg_regexp.source << ')'
