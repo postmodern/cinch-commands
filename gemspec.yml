@@ -13,6 +13,4 @@ dependencies:
   cinch: ~> 2.0
 
 development_dependencies:
-  rubygems-tasks: ~> 0.2
-  rspec: ~> 2.4
-  yard: ~> 0.7
+  bundler: ~> 2.0
