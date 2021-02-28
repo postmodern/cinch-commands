@@ -30,23 +30,23 @@ describe Cinch::Commands::Command do
     it { should be_kind_of(Regexp) }
 
     it "should match the primary command-name" do
-      "#{command_name} #{args}".should =~ subject
+      expect("#{command_name} #{args}").to match(subject)
     end
 
     it "should match the command-name aliases" do
-      "#{command_alias} #{args}".should =~ subject
+      expect("#{command_alias} #{args}").to match(subject)
     end
 
     it "should capture the arguments" do
       match = "#{command_name} #{args}".match(subject)
 
-      match[1].should == name_arg
-      match[2].should == level_arg
-      match[3].should == flag_arg
+      expect(match[1]).to eq(name_arg)
+      expect(match[2]).to eq(level_arg)
+      expect(match[3]).to eq(flag_arg)
     end
 
     it "should match the formats of the arguments" do
-      "#{command_name} xxxxx xxxx xxxxx".should_not =~ subject
+      expect("#{command_name} xxxxx xxxx xxxxx").not_to match(subject)
     end
   end
 
@@ -63,11 +63,11 @@ describe Cinch::Commands::Command do
     subject { command.usage }
 
     it "should include the command name" do
-      subject.start_with?(command_name).should be_true
+      expect(subject.start_with?(command_name)).to be(true)
     end
 
     it "should include the upper-case argument names" do
-      subject.should include("NAME LEVEL")
+      expect(subject).to include("NAME LEVEL")
     end
   end
 end
